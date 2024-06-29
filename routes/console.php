@@ -19,22 +19,20 @@ Artisan::command('operations {operations*}', function ($operations) {
 
     switch($operations[2]){
         case 'add':
-            $operation = $basicOperationImplementation->add($data);
+            $this->info('Result: '. $basicOperationImplementation->add($data));
             break;
         case 'substraction':
-            $operation = $basicOperationImplementation->substraction($data);
+            $this->info('Result: '. $basicOperationImplementation->substraction($data));
             break;
         case 'multiplication':
-            $operation = $basicOperationImplementation->multiplication($data);
+            $this->info('Result: '. $basicOperationImplementation->multiplication($data));
             break;
         case 'divide':
-            $operation = $basicOperationImplementation->divide($data);
+            $this->info('Result: '. $basicOperationImplementation->divide($data));
             break;
         default:
          $this->error('This operations does not exist');
          break;
 
     }
-
-    $this->info("Result: ". $operation);
 });
